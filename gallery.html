@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | SYAM INFRA</title>
+    <meta name="description" content="Gallery of Syam Infra projects.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* --- ULTRA PREMIUM GLASS UI --- */
+        .gallery-section {
+            padding: 8rem 0;
+            background: radial-gradient(circle at top center, #1a1a1a, #000000);
+            min-height: 100vh;
+        }
+
+        /* Floating Glass Filter Bar */
+        .glass-filter-container {
+            display: inline-flex;
+            background: rgba(255, 255, 255, 0.05);
+            /* Frosted Glass */
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 0.5rem;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin: 0 auto 5rem auto;
+            /* Centered with large gap */
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .glass-btn {
+            padding: 1rem 2.5rem;
+            border: none;
+            background: transparent;
+            color: rgba(255, 255, 255, 0.6);
+            font-family: 'Playfair Display', serif;
+            /* Luxury Font */
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 40px;
+            transition: all 0.4s ease;
+            position: relative;
+            white-space: nowrap;
+        }
+
+        /* Active State: Solid Gold Pill */
+        .glass-btn.active {
+            background: linear-gradient(135deg, #d4af37 0%, #aa8420 100%);
+            /* Gold Gradient */
+            color: #000;
+            font-weight: 600;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .glass-btn:hover:not(.active) {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        /* --- MASONRY LAYOUT (Rich Flow) --- */
+        .gallery-grid {
+            column-count: 3;
+            column-gap: 3rem;
+            /* Wide luxury gaps */
+            width: 100%;
+        }
+
+        .gallery-item {
+            break-inside: avoid;
+            margin-bottom: 3rem;
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+            transform: translateZ(0);
+            /* Hardware accel */
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            display: block;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+            border-radius: 12px;
+        }
+
+        /* Dark Gradient Overlay - Kept for hover darkening, text removed */
+        .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        /* Hover Effects */
+        .gallery-item:hover img {
+            transform: scale(1.08);
+            /* Cinematic Zoom */
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Animation Keyframes */
+        .gallery-item.hide {
+            display: none;
+        }
+
+        .gallery-item.show {
+            animation: fadeUp 0.8s cubic-bezier(0.2, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .gallery-grid {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery-grid {
+                column-count: 1;
+            }
+
+            .glass-filter-container {
+                width: 90%;
+                justify-content: space-between;
+            }
+
+            .glass-btn {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Syam Infra Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="gallery-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our <span class="gold-text">Work</span></h2>
+                <div class="line-break"></div>
+            </div>
+
+            <!-- Modern Glass Filters -->
+            <div class="glass-filter-container">
+                <button class="glass-btn active" data-filter="exterior">Exterior Elevations</button>
+                <button class="glass-btn" data-filter="interior">Interiors</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Reordered Gallery Grid (Mixed Layout) -->
+
+                <!-- Set 1-10 (Horizontal) -->
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/1.png" alt="Gallery Image 1" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/2.png" alt="Gallery Image 2" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/3.png" alt="Gallery Image 3" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/4.png" alt="Gallery Image 4" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/5.png" alt="Gallery Image 5" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/6.png" alt="Gallery Image 6" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/7.png" alt="Gallery Image 7" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/8.png" alt="Gallery Image 8" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/9.png" alt="Gallery Image 9" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/10.jpg" alt="Gallery Image 10" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <!-- Set 11-16 (Vertical) -->
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/11.png" alt="Gallery Image 11" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/12.png" alt="Gallery Image 12" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/13.png" alt="Gallery Image 13" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/14.png" alt="Gallery Image 14" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/15.png" alt="Gallery Image 15" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/16.png" alt="Gallery Image 16" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <!-- Set 17-19 (Mixed) -->
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/17.jpg" alt="Perspective Elevation 17" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/18.jpg" alt="Perspective Elevation 18" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="exterior">
+                    <img src="assets/images/19.png" alt="Gallery Image 19" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <!-- Best Internal Views (15 Images Total) -->
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/hall1.png" alt="Grand Living Hall" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/hall2.png" alt="Living Hall Perspective" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/hall3.png" alt="Modern Living Area" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/hall4.png" alt="Luxury Hall Design" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/hall%20view%206.png" alt="Premium Hall View" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/bedroom1.png" alt="Master Bedroom" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/bedroom2.png" alt="Premium Bedroom Design" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/mbr%20view%203.png" alt="Master Bedroom Perspective" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/dining1.png" alt="Elegant Dining Space" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/dining%20view%202%20C1.png" alt="Dining View" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/kitchen1.png" alt="Modern Kitchen" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/kitchen2.png" alt="Kitchen Perspective" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/kitchen%20view%204%20c1.png" alt="Kitchen Details" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/PUJA%20V1.png" alt="Puja Room Design 1" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+                <div class="gallery-item" data-category="interior">
+                    <img src="assets/images/PUJA%20V2.png" alt="Puja Room Design 2" loading="lazy">
+                    <div class="gallery-overlay"></div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <div id="caption"></div>
+    </div>
+
+    <!-- Lightbox Styles & Script -->
+    <style>
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 10000;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.95);
+            /* Deep Black BG */
+            cursor: auto !important;
+            backdrop-filter: blur(10px);
+        }
+
+        .lightbox-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 1200px;
+            max-height: 85vh;
+            object-fit: contain;
+            animation-name: zoom;
+            animation-duration: 0.5s;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        @keyframes zoom {
+            from {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: #fff;
+            font-size: 50px;
+            font-weight: 300;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .close-lightbox:hover {
+            color: var(--accent-color);
+            transform: rotate(90deg);
+        }
+
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 20px 0;
+            height: 150px;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+        }
+    </style>
+
+    <script>
+        // Lightbox Logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const captionText = document.getElementById('caption');
+            const closeBtn = document.querySelector('.close-lightbox');
+
+            // Open Lightbox (Target img click, ignoring overlay)
+            document.querySelectorAll('.gallery-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const img = item.querySelector('img');
+                    lightbox.style.display = "block";
+                    lightboxImg.src = img.src;
+                    // No text to show
+                    captionText.innerHTML = '';
+                });
+            });
+
+            // Close Lightbox
+            closeBtn.addEventListener('click', () => {
+                lightbox.style.display = "none";
+            });
+
+            // Close on outside click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    lightbox.style.display = "none";
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && lightbox.style.display === "block") {
+                    lightbox.style.display = "none";
+                }
+            });
+
+            // Filter Logic with Staggered Animation
+            const filterBtns = document.querySelectorAll('.glass-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Prevent bubbling
+                    // Remove active class from all
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active to clicked
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+                    let delay = 0;
+
+                    galleryItems.forEach(item => {
+                        item.style.animationDelay = '0s'; // Reset delay
+
+                        const category = item.getAttribute('data-category');
+                        if (filterValue === 'all' || category === filterValue) {
+                            item.classList.remove('hide');
+                            // Force reflow inside
+                            void item.offsetWidth;
+                            item.classList.add('show');
+
+                            // Add staggered delay
+                            item.style.animationDelay = `${delay}s`;
+                            delay += 0.05; // 50ms cascade
+                        } else {
+                            item.classList.remove('show');
+                            item.classList.add('hide');
+                        }
+                    });
+                });
+            });
+
+            // Trigger click on the active button
+            if (document.querySelector('.glass-btn.active')) {
+                document.querySelector('.glass-btn.active').click();
+            }
+        });
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="copyright-year">2024</span> Syam Infra. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

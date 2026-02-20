@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Children's Hospital | SYAM INFRA</title>
+    <meta name="description" content="Project details for Prime Children's Hospital by Syam Infra in Nellore.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('assets/images/project-prime-hospital.png') no-repeat center center/cover;
+            background-color: #1F2833;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .project-details-content {
+            padding: 4rem 0;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .project-gallery {
+            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-img {
+            height: 250px;
+            background-color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-meta {
+            position: sticky;
+            top: 100px;
+        }
+
+        .meta-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .meta-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-gallery {
+                justify-content: center;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Syam Infra Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <header class="project-hero">
+        <div class="container">
+            <h1 class="hero-title">Prime Children's <span class="gold-text">Hospital</span></h1>
+        </div>
+    </header>
+
+    <!-- Project Details -->
+    <section class="project-details-content">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="main-info reveal-item">
+                    <h2 class="section-title" style="text-align: left;">Project <span class="gold-text">Overview</span>
+                    </h2>
+                    <p>Prime Children's Hospital located on Mini-Bypass Road, Nellore, is
+                        a state-of-the-art healthcare
+                        facility
+                        constructed by Syam Infra. The project involved complex structural engineering to support
+                        medical equipment and provide a safe, sterile environment for patients and medical staff.</p>
+                    <br>
+                    <p>Our team ensured that all MEP (Mechanical, Electrical, and
+                        Plumbing) systems were designed and
+                        executed to the highest standards, ensuring uninterrupted services for the hospital.</p>
+
+                    <div class="project-gallery">
+                        <div class="gallery-img">
+                            <img src="assets/images/project-prime-hospital-interior.png"
+                                alt="Prime Children's Hospital Interior" loading="lazy">
+                        </div>
+                        <div class="gallery-img">
+                            <img src="assets/images/project-prime-hospital-ot.jpg"
+                                alt="Prime Children's Hospital Operation Theater" loading="lazy">
+                        </div>
+                        <div class="gallery-img">
+                            <img src="assets/images/project-prime-hospital-waiting.jpg"
+                                alt="Prime Children's Hospital Waiting Hall" loading="lazy">
+                        </div>
+                        <div class="gallery-img">
+                            <img src="assets/images/project-prime-hospital-kids-zone.png"
+                                alt="Prime Children's Hospital Pediatric Ward" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <a href="index.html#contact" class="btn btn-primary">Contact Us</a>
+                    </div>
+                </div>
+
+                <aside class="project-meta reveal-item delay-200">
+                    <div class="glass-card">
+                        <div class="meta-item">
+                            <h4>Location</h4>
+                            <p>Mini-Bypass Road, Nellore.</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Services</h4>
+                            <p>Construction, MEP</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Client</h4>
+                            <p>Prime Children's Hospital</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Status</h4>
+                            <p>Completed</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="copyright-year">2024</span> Syam Infra. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>

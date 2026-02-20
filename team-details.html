@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Details | SYAM INFRA</title>
+    <meta name="description" content="Meet our experts at Syam Infra.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .project-hero {
+            height: 60vh;
+            /* Default background, will be overridden by JS */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+            background-color: #1F2833;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .project-details-content {
+            padding: 4rem 0;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 4rem;
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .gallery-img {
+            height: 250px;
+            background-color: #333;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .gallery-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-img:hover img {
+            transform: scale(1.1);
+        }
+
+        .project-meta {
+            position: sticky;
+            top: 100px;
+        }
+
+        .meta-item {
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 1rem;
+        }
+
+        .meta-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .detail-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar scrolled">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="assets/images/logo.png" alt="Syam Infra Logo" class="logo-img">
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Hero -->
+    <header class="project-hero" id="teamHero">
+        <div class="container">
+            <h1 class="hero-title" id="detailName">Team <span class="gold-text">Member</span></h1>
+            <p class="hero-subtitle" id="detailRoleHero">Role • Syam Infra</p>
+        </div>
+    </header>
+
+    <!-- Details Content -->
+    <section class="project-details-content">
+        <div class="container">
+            <div class="detail-grid">
+                <div class="main-info reveal-item">
+                    <h2 class="section-title" style="text-align: left;">About <span class="gold-text">The
+                            Expert</span>
+                    </h2>
+                    <div id="detailBio">
+                        <!-- Bio injected here -->
+                        <p>Loading details...</p>
+                    </div>
+
+                    <h3 id="portfolioHeader"
+                        style="margin-top: 3rem; margin-bottom: 1.5rem; color: #fff; font-family: var(--font-heading);">
+                        Selected <span class="gold-text">Portfolio</span></h3>
+                    <div class="project-gallery" id="detailGallery">
+                        <!-- Images injected here -->
+                    </div>
+
+                    <div style="margin-top: 3rem;">
+                        <a href="index.html#contact" class="btn btn-primary">Work With Us</a>
+                    </div>
+                </div>
+
+                <aside class="project-meta reveal-item delay-200">
+                    <div class="glass-card">
+                        <div class="profile-placeholder-container" style="text-align: center; margin-bottom: 2rem;">
+                            <div class="profile-icon"
+                                style="font-size: 5rem; color: var(--accent-color); background: rgba(255,255,255,0.05); width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto; border: 2px solid var(--accent-color);">
+                                <i class="fas fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Role</h4>
+                            <p id="detailRole">Loading...</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Experience</h4>
+                            <p id="detailExp">Years of Excellence</p>
+                        </div>
+                        <div class="meta-item">
+                            <h4>Specialization</h4>
+                            <p id="detailSpec">Core Expertise</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; <span id="copyright-year">2024</span> Syam Infra. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Init Team Details on load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadTeamDetails();
+        });
+    </script>
+</body>
+
+</html>
