@@ -312,6 +312,7 @@ const teamData = {
         experience: "4+ Years",
         specialization: "3D Modeling & Rendering",
         profileImage: "assets/images/hareesh.jpg",
+        imageStyle: "object-fit: cover; transform-origin: center 10%; transform: scale(1.4);",
         images: [
             "assets/images/1.png",
             "assets/images/2.png",
@@ -348,6 +349,7 @@ const teamData = {
         experience: "5+ Years",
         specialization: "Technical Drafting",
         profileImage: "assets/images/prasad.png",
+        imageStyle: "object-fit: cover; transform-origin: center 5%; transform: scale(1.8);",
         images: [],
         heroBg: "assets/images/hero-bg.jpg"
     },
@@ -392,7 +394,8 @@ function loadTeamDetails() {
     if (member.profileImage) {
         const profileContainer = document.querySelector('.profile-placeholder-container');
         if (profileContainer) {
-            profileContainer.innerHTML = `<img src="${member.profileImage}" alt="${member.name}" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; object-position: top center; border: 2px solid var(--accent-color);">`;
+            const extraStyle = member.imageStyle ? member.imageStyle : "object-fit: cover; object-position: top center;";
+            profileContainer.innerHTML = `<div style="width: 120px; height: 120px; border-radius: 50%; border: 2px solid var(--accent-color); overflow: hidden;"><img src="${member.profileImage}" alt="${member.name}" style="width: 100%; height: 100%; ${extraStyle}"></div>`;
         }
     }
 
