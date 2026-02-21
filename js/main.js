@@ -350,7 +350,7 @@ const teamData = {
         experience: "5+ Years",
         specialization: "Technical Drafting",
         profileImage: "assets/images/prasad.png",
-        imageStyle: "object-fit: cover; transform-origin: center 5%; transform: scale(1.8);",
+        imageStyle: "object-fit: cover; transform-origin: center 5%; transform: scale(1.8);margin-left: -10px;",
         images: [],
         heroBg: "assets/images/hero-bg.jpg"
     },
