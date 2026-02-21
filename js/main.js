@@ -329,7 +329,8 @@ const teamData = {
         bio: "Akash brings spaces to life. Specializing in luxury residential and functional commercial interiors, he works closely with clients to reflect their personality in their spaces. Innovative use of materials and lighting is his signature.",
         experience: "3+ Years",
         specialization: "Luxury Interiors",
-        profileImage: "", // No image provided for Akash, default icon
+        profileImage: "assets/images/akash.jpg",
+        imageStyle: "object-fit: cover;",
         images: [
             "assets/images/hall1.png",
             "assets/images/hall2.png",
