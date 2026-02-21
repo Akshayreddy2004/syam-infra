@@ -345,7 +345,7 @@ const teamData = {
     },
     engineer: {
         name: "Mr. Kotakonda Prasad",
-        role: "CAD Draftsman",
+        role: "Architect",
         bio: "With a profound mastery of 2D architectural software, Prasad leads the technical drafting phase at Syam Infra. He excels at creating meticulously detailed elevations, sections, and structural floor plans that bring our luxury visions to life on paper. His unwavering precision ensures that contractors have a flawless technical guide, bridging the gap between artistic design and elite construction.",
         experience: "5+ Years",
         specialization: "Technical Drafting",
