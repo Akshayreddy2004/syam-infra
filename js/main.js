@@ -326,7 +326,7 @@ const teamData = {
         name: "Mr. Challa Akash Reddy",
         role: "Interior Designer",
         bio: "Akash brings spaces to life. Specializing in luxury residential and functional commercial interiors, he works closely with clients to reflect their personality in their spaces. Innovative use of materials and lighting is his signature.",
-        experience: "2+ Years",
+        experience: "3+ Years",
         specialization: "Luxury Interiors",
         profileImage: "", // No image provided for Akash, default icon
         images: [
@@ -355,7 +355,7 @@ const teamData = {
         name: "Mr. Mahesh",
         role: "CAD Draftsman",
         bio: "Mahesh specializes in the critical phase of 2D layout planning and spatial coordination. By translating complex architectural requirements into perfectly optimized floor plans and structural diagrams, he ensures that every square foot of a Syam Infra property is utilized efficiently. His highly accurate 2D layouts form the backbone of our construction process, guaranteeing seamless integration from the ground up.",
-        experience: "3+ Years",
+        experience: "1+ Years",
         specialization: "Layout Planning",
         images: [],
         heroBg: "assets/images/hero-bg.jpg"

@@ -1320,3 +1320,140 @@ h6 {
         /* Maintain video shape on mobile */
     }
 }
+
+/* --- Floor Plans Section --- */
+.floor-plans-section {
+    margin-top: 4rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.floor-plans-section h3 {
+    color: var(--accent-color);
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+}
+
+.floor-plans-tabs {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.fp-tab-btn {
+    background: transparent;
+    border: 1px solid var(--glass-border);
+    color: var(--text-muted);
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-body);
+    font-weight: 500;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.fp-tab-btn:hover {
+    border-color: rgba(197, 160, 89, 0.5);
+    color: var(--text-color);
+}
+
+.fp-tab-btn.active {
+    background: var(--accent-gradient);
+    color: #000;
+    border-color: transparent;
+}
+
+.fp-tab-content {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.fp-tab-content.active {
+    display: block;
+}
+
+.fp-image-container {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: zoom-in;
+    transition: var(--transition);
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.fp-image-container:hover {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.fp-image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.5s ease;
+}
+
+.fp-image-container:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Lightbox --- */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: var(--transition);
+    backdrop-filter: blur(10px);
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    position: relative;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 4px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.lightbox-close:hover {
+    color: var(--accent-color);
+}
