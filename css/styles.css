@@ -746,9 +746,8 @@ h6 {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* Mobile menu implementation usually requires JS toggle */
         position: absolute;
-        top: 70px;
+        top: 100%;
         left: 0;
         width: 100%;
         background: var(--primary-color);
@@ -756,6 +755,9 @@ h6 {
         align-items: center;
         padding: 2rem 0;
         gap: 1.5rem;
+        max-height: calc(100vh - 70px);
+        overflow-y: auto;
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
     }
 
     .nav-links.active {
@@ -771,7 +773,69 @@ h6 {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .glass-card {
+        padding: 1.5rem !important;
+    }
+
+    .about-text h3 {
+        font-size: 1.4rem;
+    }
+
+    .stats {
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: space-around;
+        text-align: center;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .projects-grid,
+    .services-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        height: 320px;
+    }
+
+    .project-info {
+        bottom: 10px !important;
+        padding: 1rem;
+        left: 10px;
+        right: 10px;
+    }
+
+    .project-info h3 {
+        font-size: 1.1rem;
+    }
+
+    .project-info p {
+        margin-bottom: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .section {
+        padding: 3.5rem 0;
+    }
+
+    .areas-content p {
+        font-size: 1rem !important;
     }
 }
 
@@ -1028,6 +1092,18 @@ h6 {
     .footer-content {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+        text-align: center;
+    }
+
+    .contact-list-footer li {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.5rem;
+    }
+
+    .social-links-footer {
+        justify-content: center;
     }
 
     .footer-bottom {
