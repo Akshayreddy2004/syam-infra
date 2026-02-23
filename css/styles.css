@@ -46,6 +46,7 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -418,7 +419,9 @@ h6 {
 /* Hero Section */
 .hero {
     position: relative;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100dvh;
+    /* Modern viewport height fix for iOS */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -682,6 +685,9 @@ h6 {
     font-family: var(--font-body);
     font-size: 1rem;
     border-radius: 4px;
+    -webkit-appearance: none;
+    /* iOS input style fix */
+    appearance: none;
     transition: var(--transition);
 }
 
