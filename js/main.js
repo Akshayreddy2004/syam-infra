@@ -1,44 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // Theme Initialization
-    const initTheme = () => {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.classList.toggle('light-mode', savedTheme === 'light');
-            updateThemeIcon(savedTheme === 'light');
-        } else {
-            // Check system preference
-            const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
-            document.documentElement.classList.toggle('light-mode', prefersLight);
-            updateThemeIcon(prefersLight);
-        }
-    };
 
-    const updateThemeIcon = (isLight) => {
-        const themeIcons = document.querySelectorAll('.theme-toggle i');
-        themeIcons.forEach(icon => {
-            if (isLight) {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            } else {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            }
-        });
-    };
-
-    // Initialize on load
-    initTheme();
-
-    // Theme Toggle Listener
-    const themeToggles = document.querySelectorAll('.theme-toggle');
-    themeToggles.forEach(toggle => {
-        toggle.addEventListener('click', () => {
-            const isLight = document.documentElement.classList.toggle('light-mode');
-            localStorage.setItem('theme', isLight ? 'light' : 'dark');
-            updateThemeIcon(isLight);
-        });
-    });
 
     // Preloader
     const preloader = document.getElementById('preloader');

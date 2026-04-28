@@ -454,24 +454,6 @@ h6 {
     transition: var(--transition);
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-    background: none;
-    border: none;
-    color: var(--text-color);
-    cursor: pointer;
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition);
-}
-
-.theme-toggle:hover {
-    color: var(--accent-color);
-    transform: rotate(15deg);
-}
-
 /* Hero Section */
 .hero {
     position: relative;
