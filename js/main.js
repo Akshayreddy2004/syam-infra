@@ -1,5 +1,45 @@
 document.addEventListener('DOMContentLoaded', function () {
 
+    // Theme Initialization
+    const initTheme = () => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.classList.toggle('light-mode', savedTheme === 'light');
+            updateThemeIcon(savedTheme === 'light');
+        } else {
+            // Check system preference
+            const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+            document.documentElement.classList.toggle('light-mode', prefersLight);
+            updateThemeIcon(prefersLight);
+        }
+    };
+
+    const updateThemeIcon = (isLight) => {
+        const themeIcons = document.querySelectorAll('.theme-toggle i');
+        themeIcons.forEach(icon => {
+            if (isLight) {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            } else {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            }
+        });
+    };
+
+    // Initialize on load
+    initTheme();
+
+    // Theme Toggle Listener
+    const themeToggles = document.querySelectorAll('.theme-toggle');
+    themeToggles.forEach(toggle => {
+        toggle.addEventListener('click', () => {
+            const isLight = document.documentElement.classList.toggle('light-mode');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+            updateThemeIcon(isLight);
+        });
+    });
+
     // Preloader
     const preloader = document.getElementById('preloader');
     if (preloader) {
@@ -302,6 +342,8 @@ const teamData = {
         bio: "As the driving force behind Syam Infra's evolution, Mr. Megha Syam combines his deep expertise in Structural Engineering with modern architectural trends. He is dedicated to implementing advanced construction methodologies that ensure safety, durability, and aesthetic brilliance in every project.",
         experience: "4+ Years",
         specialization: "Structural Engineering",
+        profileImage: "assets/images/megha-syam.jpeg",
+        imageStyle: "object-fit: cover; transform-origin: center 22%; transform: scale(1.7);",
         images: [],
         heroBg: "assets/images/project-prime-hospital.png"
     },
@@ -354,7 +396,7 @@ const teamData = {
         images: [],
         heroBg: "assets/images/hero-bg.jpg"
     },
-    manager: {
+    manager: { 
         name: "Mr. Mahesh",
         role: "CAD Draftsman",
         bio: "Mahesh specializes in the critical phase of 2D layout planning and spatial coordination. By translating complex architectural requirements into perfectly optimized floor plans and structural diagrams, he ensures that every square foot of a Syam Infra property is utilized efficiently. His highly accurate 2D layouts form the backbone of our construction process, guaranteeing seamless integration from the ground up.",
